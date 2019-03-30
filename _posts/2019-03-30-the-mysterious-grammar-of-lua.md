@@ -2,7 +2,7 @@
 layout: post
 title:  "The Mysterious Grammar of Lua"
 date:   2019-03-30
-categories: lua languages
+categories: languages lua
 ---
 [Lua](https://www.lua.org) is a wonderful programming/scripting language that is both lightweight and extensible.
 
@@ -16,7 +16,7 @@ What the hell is this? How is that even valid syntax? What does it do? How does 
 
 TL;DR: These are three different statements. ALAS! Because Lua has no semicolons, I hear you say, but it's not that simple, go ahead and fire up your favorite Python interpreter and run the same code... Syntax Error. Still not convinced? Try with JavaScript, still, Syntax Error. So what's so special about Lua?
 
-If you are not familiar with topics like lexical analysis, parsing and abstract syntax trees, I strongly recommend reading [this article](https://tomassetti.me/parse-tree-abstract-syntax-tree/) and get back here
+If you are not familiar with topics like lexical analysis, parsing and abstract syntax trees, I strongly recommend reading [this article](https://medium.com/basecs/leveling-up-ones-parsing-game-with-asts-d7a6fc2400ff) and get back here.
 
 # Lexical Analysis
 Of course that line above wasn't what struck me, and I didn't forget to add spaces and was surprised by the result, what surprised me most was this snippet from my lexer implementation (in C):
@@ -71,11 +71,11 @@ Name(x) `=´ Number(1) stat [`;´] {stat [`;´]} [laststat [`;´]]    (Expand, n
 
 You see in the last line, that immediately after the terminal `Number` (which represents the 1 in `x=1`), we are back again at expecting a statement.
 
-So the generated AST would be
+So the generated AST would be:
 ![](/public/images/2019-03-30-ast.png)
 
 Or simply, a program consisting of three statements: two assignments followed by a function call.
 
-This doesn't work in Python (albeit semicolon being optional) because all statements in [Python grammar](https://docs.python.org/3/reference/grammar.html) are required to terminate with a NEWLINE character.
+This doesn't work in Python (even with semicolon being optional) because all statements in [Python grammar](https://docs.python.org/3/reference/grammar.html) are required to terminate with a NEWLINE character.
 
 For JavaScript, the situation is a bit obscure since all EBNF grammar I have found so far would allow the same construction, my assumption is that it fails in a later stage of the compilation. If anyone could point me on why JavaScript doesn't allow it, feel free to ping me.
