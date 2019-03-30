@@ -15,11 +15,11 @@
 # in the templates via {{ site.myvariable }}.
 title: glimpse
 tagline: of everything
-email: manwar@ieee.org
+email: manwar@ieee-zsb.org
 description: >- # this means to ignore newlines until "baseurl:"
     glimpse of everything
-baseurl: "http://glimpse.aquilaos.com" # the subpath of your site, e.g. /blog
-url: "http://glimpse.aquilaos.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "https://glimpse.aquilaos.com" # the subpath of your site, e.g. /blog
+url: "https://glimpse.aquilaos.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: manwar_hamza
 github_username:  mohamed-anwar
 
