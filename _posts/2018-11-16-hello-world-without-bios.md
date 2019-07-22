@@ -217,4 +217,4 @@ It still shows the same thing, which is OK, we didn't initialize VGA, to see the
 
 ![](/public/images/2018-11-16-hello-world-without-bios-img-2.png)
 
-Viola! Welcome to the 80s!
+Voilà! Welcome to the 80s!
